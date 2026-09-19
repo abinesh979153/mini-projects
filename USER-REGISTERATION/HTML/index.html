@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Registration</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+
+  <main class="page-center">
+    <div class="card">
+
+      <!-- Header -->
+      <div class="card-header">
+        <div class="logo-mark">✦</div>
+        <h1>Create Account</h1>
+        <p>Fill in the details below to get started</p>
+      </div>
+
+      <!-- Phase toggle -->
+      <div class="phase-toggle">
+        <button class="toggle-btn active" id="btn-phase1" onclick="switchPhase('phase1')">
+          Phase 1 <span class="badge">Prototype</span>
+        </button>
+        <button class="toggle-btn" id="btn-phase2" onclick="switchPhase('phase2')">
+          Phase 2 <span class="badge">ES6 Class</span>
+        </button>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="registrationForm" novalidate>
+
+        <!-- Full Name -->
+        <div class="form-group" id="group-name">
+          <label for="fullName">Full Name</label>
+          <div class="input-wrap">
+            <span class="input-icon">👤</span>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Jane Doe"
+              autocomplete="name"
+            />
+          </div>
+          <span class="validation-msg" id="msg-name"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" id="group-email">
+          <label for="email">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="jane@example.com"
+              autocomplete="email"
+            />
+          </div>
+          <span class="validation-msg" id="msg-email"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group" id="group-password">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Min 6 chars, letters & numbers"
+              autocomplete="new-password"
+            />
+            <!-- Show/Hide toggle -->
+            <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password visibility">
+              <span id="eyeIcon">👁</span>
+            </button>
+          </div>
+          <!-- Password strength bar -->
+          <div class="strength-bar" id="strengthBar">
+            <div class="strength-fill" id="strengthFill"></div>
+          </div>
+          <span class="strength-label" id="strengthLabel"></span>
+          <span class="validation-msg" id="msg-password"></span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group" id="group-confirm">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔑</span>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+            />
+            <button type="button" class="toggle-pw" id="toggleConfirm" aria-label="Toggle confirm password visibility">
+              <span id="eyeIconConfirm">👁</span>
+            </button>
+          </div>
+          <span class="validation-msg" id="msg-confirm"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn" id="submitBtn" disabled>
+          <span class="btn-text">Create Account</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <!-- Global success/error message -->
+        <div class="form-feedback" id="formFeedback"></div>
+
+      </form>
+
+      <p class="signin-link">Already have an account? <a href="#">Sign in</a></p>
+    </div>
+  </main>
+
+  <!-- Phase indicator (bottom) -->
+  <div class="phase-indicator" id="phaseIndicator">Using: Phase 1 — Function Prototypes</div>
+
+  <!-- Load Phase 1 by default; script-es6.js loaded on demand -->
+  <script src="../JS/script.js"></script>
+  <script src="../JS/script-es6.js"></script>
+
+</body>
+</html>
